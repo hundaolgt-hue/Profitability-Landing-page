@@ -24,8 +24,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 if (location.hostname === 'profitcheck-neon.vercel.app') {
   fbq('init', '1089421114009929');
-  fbq('trackCustom', 'PageView');
-fbq('track','ViewContent',{content_ids:['16777'],content_type:'product',content_name:'ProfitCheck',value:2499,currency:'ETB'});
+  fbq('track', 'PageView');
+  fbq('track','ViewContent',{content_ids:['16777'],content_type:'product',content_name:'ProfitCheck',value:2499,currency:'ETB'});
+}
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1089421114009929&ev=PageView&noscript=1"></noscript>
 <style>
@@ -554,7 +555,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   document.querySelectorAll('.buy-link').forEach(function(a){
     a.addEventListener('click',function(ev){
       var box=a.closest('.nav,.sticky,section'),where=box?(box.id||box.className.split(' ')[0]):'page';
-      fbq('track','BuyClick',{content_ids:['16777'],content_type:'product',value:2499,currency:'ETB',num_items:1,cta:where});
+      fbq('trackCustom','BuyClick',{content_ids:['16777'],content_type:'product',value:2499,currency:'ETB',num_items:1,cta:where});
       // give the pixel a moment to send before leaving (skip for new-tab clicks)
       if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.button!==0)return;
       ev.preventDefault();var go=function(){location.href=a.href};setTimeout(go,300);
